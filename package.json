@@ -1,0 +1,28 @@
+{
+  "name": "caps",
+  "version": "1.0.0",
+  "description": "Created by Ryan Emmans",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/vendor.js",
+    "watch": "nodemon index.js",
+    "test": "jest --coverage --verbose",
+    "test-watch": "jest --watchAll --coverage --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanemmans/caps.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanemmans/caps/issues"
+  },
+  "homepage": "https://github.com/ryanemmans/caps#readme",
+  "dependencies": {
+    "faker": "^5.5.3",
+    "jest": "^27.3.1",
+    "supertest": "^6.1.6"
+  }
+}
