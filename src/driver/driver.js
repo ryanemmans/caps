@@ -1,6 +1,15 @@
 'use strict';
 
-const caps = require('../hub/events.js');
-const handlePickup = require('./handle-pickup.js');
+const client = require('socket.io-client');
 
-caps.on('pickup', handlePickup);
+function connect(namespace) {
+  return client(`http://localhost:3030/${namespace}`);
+}
+
+// connect client to server
+const capsClient = client('http://localhost:3030/caps'); // add namespace
+
+const driverClient = client('http://localhost:3030');
+
+capsClient.emit('driver', 'hello world');
+capsClient.on('received', console.log);

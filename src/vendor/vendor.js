@@ -1,20 +1,15 @@
 'use strict';
 
-const caps = require('../hub/events.js');
-const faker = require('faker');
-const logDelivery = require('./log-delivery.js');
+const client = require('socket.io-client');
 
-caps.on('delivered', logDelivery);
-
-function pickup(storeName) {
-  let payload = {
-    'store': storeName,
-    'orderId': faker.random.alphaNumeric(15),
-    'customer': faker.name.findName(),
-    'address': faker.address.streetAddress(),
-  };
-
-  caps.emit('pickup', payload);
+function connect(namespace) {
+  return client(`http://localhost:3030/${namespace}`);
 }
 
-pickup('1-800-flowers');
+// connect client to server
+const caps = client('http://localhost:3030/caps'); // add namespace
+
+const vendorClient = client('http://localhost:3030');
+
+caps.emit('vendor', 'hello world');
+caps.on('received', console.log);
