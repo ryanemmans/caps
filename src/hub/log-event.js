@@ -7,7 +7,6 @@ const logEvent = (event) => (payload) => {
     time: new Date().toString(),
     payload,
   };
-
   console.log(`EVENT`, log);
 };
 
