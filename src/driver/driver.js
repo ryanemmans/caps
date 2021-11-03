@@ -1,15 +1,17 @@
-'use strict';
+// OLD CODE //
 
-const client = require('socket.io-client');
+// 'use strict';
 
-function connect(namespace) {
-  return client(`http://localhost:3030/${namespace}`);
-}
+// const client = require('socket.io-client');
 
-// connect client to server
-const capsClient = client('http://localhost:3030/caps'); // add namespace
+// function connect(namespace) {
+//   return client(`http://localhost:3030/${namespace}`);
+// }
 
-const driverClient = client('http://localhost:3030');
+// // connect client to server
+// const capsClient = client('http://localhost:3030/caps'); // add namespace
 
-capsClient.emit('driver', 'hello world');
-capsClient.on('received', console.log);
+// const driverClient = client('http://localhost:3030');
+
+// capsClient.emit('driver', 'hello world');
+// capsClient.on('received', console.log);
