@@ -2,10 +2,10 @@
   "name": "caps",
   "version": "1.0.0",
   "description": "Created by Ryan Emmans",
-  "main": "index.js",
+  "main": "./src/hub/server.js",
   "scripts": {
-    "start": "node ./src/vendor.js",
-    "watch": "nodemon index.js",
+    "start": "node ./src/hub/server.js",
+    "watch": "nodemon ./src/hub/server.js",
     "test": "jest --coverage --verbose",
     "test-watch": "jest --watchAll --coverage --verbose"
   },
